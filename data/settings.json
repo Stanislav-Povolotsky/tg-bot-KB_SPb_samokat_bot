@@ -1,0 +1,46 @@
+{
+  "app_name": "bot",
+  "telegram_bot_name": "KB_SPb_samokat_bot",
+  "telegram_token": "1111111111:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "bot_admins": [123455667, "adminusernick"],
+  "frequency_limits": {
+    "get_pass": 60
+  },
+
+  "sbcs_api": {
+    "base_url": "https://sbcs.ru",
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+      "Accept": "application/vnd.smartspace.v2.14+json",
+      "Accept-Language": "ru-RU",
+      "client-app": "smartbc/6.20.1",
+      "Cache-Control": "no-cache, no-store",
+      "Content-Type": "application/json"
+    },
+    "methods": {
+      "location_activities": {
+        "method": "GET",
+        "url":    "/api/v2/locations/2150/activities/",
+        "headers": {
+          "Referer": "https://sbcs.ru/?location=2150"
+        }
+      },
+      "create_issue_for_samokat": {
+        "method": "POST",
+        "url":    "/api/issues/create/",
+        "headers": {
+          "Referer": "https://sbcs.ru/issues/new?activity=61&issueType=3z9y6et&location=2150"
+        },
+        "data-template": {
+            "issue_type_id": "3z9y6et",
+            "location_id": "2150",
+            "attributes": {
+                "3pavd71wx3nb": "phone-number",
+                "8vbl70ztlxov": false,
+                "_pass_allowed_assets": "Самокат"
+            }
+        }
+      }
+    }
+  }
+}
